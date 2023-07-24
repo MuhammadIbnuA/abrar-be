@@ -45,7 +45,7 @@ const login = async (req, res) => {
     }
 
     // Generate JWT token
-    const token = jwt.sign({ user: user.username }, 'almeyda', { expiresIn: '1h' });
+    const token = jwt.sign({ user: user.username }, 'abraraji', { expiresIn: '1h' });
 
     // Set the JWT token as a cookie
     res.cookie('token', token, { maxAge: 3600000, httpOnly: true }); // Expiry set to 1 hour (3600000 milliseconds)
