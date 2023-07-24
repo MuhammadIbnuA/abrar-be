@@ -18,19 +18,19 @@ const menuController = require("./controller/menucontroller");
 const isAuthenticated = require("./middleware/authmiddleware");
 
 // Create a new menu
-app.post("/", menuController.createMenu);
+app.post("/menu", menuController.createMenu);
 
 // Get a menu by ID
-app.get("/:id", menuController.getMenuById);
+app.get("/menu/:id", menuController.getMenuById);
 
 // Get all menus
-app.get("/", isAuthenticated, menuController.getAllMenus);
+app.get("/menu", isAuthenticated, menuController.getAllMenus);
 
 // Update a menu by ID
-app.put("/:id", menuController.updateMenu);
+app.put("/menu/:id", menuController.updateMenu);
 
 // Delete a menu by ID
-app.delete("/:id", menuController.deleteMenu);
+app.delete("/menu/:id", menuController.deleteMenu);
 
 // Register a new user
 app.post("/register", registerUser);
